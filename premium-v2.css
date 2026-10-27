@@ -62,11 +62,11 @@ body{background:#f8fbff;color:#142344}
 .country-lithuania{background:linear-gradient(135deg,#f8b84e,#78bcb3 49%,#206b91)}.country-lithuania:before{content:'';position:absolute;bottom:-18%;left:0;width:120%;height:65%;background:repeating-linear-gradient(90deg,#0f4f71 0 35px,#116480 35px 41px,transparent 41px 72px);opacity:.4;transform:skewY(-10deg)}
 .country-slovakia{background:linear-gradient(135deg,#8191bc,#386b9f 55%,#122b67)}.country-slovakia:before{content:'';position:absolute;bottom:0;width:100%;height:65%;background:linear-gradient(110deg,transparent 15%,#d9e9ff75 16% 33%,transparent 34% 50%,#afc9e875 51% 72%,transparent 73%);opacity:.65}
 .country-netherlands{background:linear-gradient(135deg,#54b6b7,#316a9f 54%,#102c62)}.country-netherlands:before{content:'';position:absolute;inset:-20%;transform:skewX(-21deg);background:repeating-linear-gradient(90deg,transparent 0 45px,#d2f8ee40 45px 49px,transparent 49px 80px);opacity:.9}
-/* Client-provided old-site imagery; gradients above remain fallbacks. */
-.country-germany{background-image:linear-gradient(0deg,#16345b55,transparent 65%),url('https://static.tildacdn.pro/tild6662-6332-4365-b333-386634313636/2335134-1.jpg');background-size:cover;background-position:center 40%}
-.country-lithuania{background-image:linear-gradient(0deg,#16345b55,transparent 65%),url('https://static.tildacdn.pro/tild3039-6435-4065-b235-363231376338/1TAVB7Law4Ox3W2LhVc1.webp');background-size:cover;background-position:center 42%}
-.country-slovakia{background-image:linear-gradient(0deg,#16345b55,transparent 65%),url('https://static.tildacdn.pro/tild3934-3061-4364-a430-316564393736/___6_821333ts.jpg');background-size:cover;background-position:center 45%}
-.country-netherlands{background-image:linear-gradient(0deg,#16345b55,transparent 65%),url('https://static.tildacdn.pro/tild3732-6131-4563-b765-323664646638/sbor-ovoshhej.jpg');background-size:cover;background-position:center 45%}
+/* Original agency-site photography is bundled so the design is independent of Tilda. */
+.country-germany{background-image:linear-gradient(0deg,#16345b55,transparent 65%),url('./assets/germany.jpg');background-size:cover;background-position:center 40%}
+.country-lithuania{background-image:linear-gradient(0deg,#16345b55,transparent 65%),url('./assets/lithuania.webp');background-size:cover;background-position:center 42%}
+.country-slovakia{background-image:linear-gradient(0deg,#16345b55,transparent 65%),url('./assets/slovakia.jpg');background-size:cover;background-position:center 45%}
+.country-netherlands{background-image:linear-gradient(0deg,#16345b55,transparent 65%),url('./assets/netherlands.jpg');background-size:cover;background-position:center 45%}
 .country-image .country-letter{opacity:.24}
 .country-germany:before,.country-lithuania:before,.country-slovakia:before,.country-netherlands:before{display:none}
 .v2-card .card-details{padding:27px 29px 30px}.v2-featured .card-details{display:flex;flex-direction:column;justify-content:center;padding:38px}
