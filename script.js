@@ -3,6 +3,29 @@
   const menuButton = document.querySelector('.menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const interestSelect = document.getElementById('interest');
+  // Keep the prefilled WhatsApp inquiry aligned with the countries shown in the demo.
+  if (interestSelect) {
+    for (const option of [...interestSelect.options]) {
+      if (option.value.includes('США') || option.value.includes('Польше —') || option.value.includes('других странах')) option.remove();
+    }
+    for (const [name, country] of [['Польша', '🇵🇱'], ['Германия', '🇩🇪'], ['Литва', '🇱🇹'], ['Словакия', '🇸🇰'], ['Нидерланды', '🇳🇱']]) {
+      const option = new Option(country + ' ' + name, 'Работа — ' + name);
+      interestSelect.add(option);
+    }
+  }
+  const stepsGrid = document.querySelector('.steps-grid');
+  if (stepsGrid) {
+    const steps = [
+      ['✳', 'Консультация', 'Знакомство, опыт работы и выбор целей.'],
+      ['⌕', 'Подбор направления', 'Обсуждаем предложения и требования.'],
+      ['▤', 'Договор', 'Уточняем услуги, стоимость и обязанности сторон.'],
+      ['✉', 'Приглашение', 'Ожидаем необходимые документы от работодателя.'],
+      ['◈', 'Собеседование и виза', 'Проверяем список документов и порядок подачи. Решение принимает консульство.'],
+      ['✈', 'Поездка и адаптация', 'После всех согласований обсуждаем прибытие и первые дни на месте.']
+    ];
+    stepsGrid.classList.add('premium-six-steps');
+    stepsGrid.innerHTML = steps.map(([icon, title, description]) => '<article class="step"><span class="step-icon">' + icon + '</span><h3>' + title + '</h3><p>' + description + '</p></article>').join('');
+  }
   function closeMenu() {
     if (!menuButton || !mobileMenu) return;
     menuButton.setAttribute('aria-expanded', 'false');
