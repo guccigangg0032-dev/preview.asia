@@ -35,3 +35,13 @@
 @keyframes float-left{to{translate:0 -9px}}@keyframes float-right{to{translate:0 10px}}
 @media(max-width:620px){.premium-scene:before{width:84%;filter:blur(8px)}.hero-premium:after{animation:none;opacity:.18}.premium-float-left,.premium-float-right{animation:none}.proof-card-secondary{background-position:center,center 35%}.motion-ready .step{transition-delay:0ms!important}.premium-scene-orbit{animation-duration:35s}}
 @media(prefers-reduced-motion:reduce){.hero-premium:after,.premium-kicker,.hero-premium h1,.premium-subtitle,.premium-actions,.premium-scene:before,.premium-scene-orbit,.premium-float-left,.premium-float-right{animation:none!important}.motion-ready .motion-reveal{opacity:1;transform:none;transition:none}.proof-card,.premium-float-card{transition:none}}
+
+/* Visible illustrated fallback on devices without WebGL, with gentle mobile motion. */
+.premium-scene:not(.has-3d) .premium-globe-image{animation:globe-fallback-float 5.4s ease-in-out infinite;will-change:transform}
+@keyframes globe-fallback-float{0%,100%{transform:translate3d(0,3px,0) rotate(-1.3deg)}50%{transform:translate3d(0,-17px,0) rotate(1.3deg)}}
+@media(max-width:620px) and (prefers-reduced-motion:no-preference){
+  .hero-premium:after{animation:hero-shimmer 16s ease-in-out infinite;opacity:.30}
+  .premium-float-left{animation:float-left 7s ease-in-out infinite alternate}
+  .premium-float-right{animation:float-right 8s ease-in-out infinite alternate}
+}
+@media(prefers-reduced-motion:reduce){.premium-scene:not(.has-3d) .premium-globe-image{animation:none!important;will-change:auto}}
