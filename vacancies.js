@@ -20,11 +20,26 @@
   if (!search || !category || !grid) return;
   let jobs = [];
   let visibleCount = 12;
+  const supportedCountries = ['Польша', 'Германия', 'Литва', 'Словакия', 'Нидерланды'];
+  const requestedCountry = new URLSearchParams(window.location.search).get('country');
+  let selectedCountry = supportedCountries.includes(requestedCountry) ? requestedCountry : '';
+  if (selectedCountry) {
+    const title = document.querySelector('.page-hero h1');
+    if (title) title.setAttribute('data-country-view', selectedCountry);
+    const hint = document.getElementById('job-empty');
+    if (hint) {
+      const heading = hint.querySelector('strong');
+      const paragraph = hint.querySelector('p');
+      if (heading) heading.textContent = 'Нет опубликованных вакансий: ' + selectedCountry;
+      if (paragraph) paragraph.textContent = 'Подтвердите актуальные предложения и требования у менеджера или выберите другую страну.';
+    }
+  }
   const wa = 'https://wa.me/77052753333?text=';
   function normalize(value) { return String(value || '').toLocaleLowerCase('ru').replace(/ё/g,'е').trim(); }
   function matches(job) {
     const q = normalize(search.value);
     if (category.value !== 'Все' && category.value !== job.category) return false;
+    if (selectedCountry && normalize(job.country) !== normalize(selectedCountry)) return false;
     return !q || normalize([job.title,job.country,job.location,job.category,job.details].join(' ')).includes(q);
   }
   function openJob(job) {
@@ -56,14 +71,22 @@
   function render() {
     const filtered = jobs.filter(matches);
     grid.replaceChildren(...filtered.slice(0,visibleCount).map(createCard));
-    counter.textContent = 'Найдено предложений: ' + filtered.length + (filtered.length > visibleCount ? ' · Показано ' + visibleCount : '');
+    counter.textContent = (selectedCountry ? 'Страна: ' + selectedCountry + ' · ' : '') + 'Найдено предложений: ' + filtered.length + (filtered.length > visibleCount ? ' · Показано ' + visibleCount : '');
     empty.hidden = filtered.length !== 0;
     loadMore.hidden = visibleCount >= filtered.length;
   }
   function onFilter(){visibleCount=12;render();}
   search.addEventListener('input',onFilter);
   category.addEventListener('change',onFilter);
-  reset.addEventListener('click',()=>{search.value='';category.value='Все';onFilter();search.focus();});
+  reset.addEventListener('click',()=>{
+    search.value='';category.value='Все';selectedCountry='';
+    if (requestedCountry) window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+    const heading = empty?.querySelector('strong');
+    const paragraph = empty?.querySelector('p');
+    if (heading) heading.textContent = 'Ничего не найдено';
+    if (paragraph) paragraph.textContent = 'Попробуй другой город, название работы или категорию.';
+    onFilter();search.focus();
+  });
   loadMore.addEventListener('click',()=>{visibleCount+=12;render();});
   closeDialog.addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
