@@ -2,7 +2,26 @@
   'use strict';
   const host = document.getElementById('interactive-globe');
   const scene = host?.closest('.premium-scene');
-  if (!host || !scene || typeof window.Globe !== 'function') return;
+  if (!host || !scene) return;
+
+  // The static illustration is always the fallback when WebGL or the CDN is unavailable.
+  const showFallback = () => {
+    scene.classList.remove('has-3d');
+    scene.classList.add('has-fallback');
+    host.setAttribute('aria-label', 'Иллюстрация Земли. Страны можно выбрать ниже.');
+  };
+  if (typeof window.Globe !== 'function') {
+    window.addEventListener('load', () => {
+      if (typeof window.Globe !== 'function') showFallback();
+    }, { once: true });
+    return;
+  }
+  try {
+    const probe = document.createElement('canvas');
+    const gl = probe.getContext('webgl2') || probe.getContext('webgl') || probe.getContext('experimental-webgl');
+    if (!gl) { showFallback(); return; }
+    gl.getExtension('WEBGL_lose_context')?.loseContext();
+  } catch (error) { showFallback(); return; }
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const countries = [
@@ -15,6 +34,7 @@
 
   const countryLink = country => './vacancies.html?country=' + encodeURIComponent(country.name);
   try {
+    let globeReady = false;
     const globe = new window.Globe(host, { animateIn: !reducedMotion })
       .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe@2.37.2/example/img/earth-blue-marble.jpg')
       .backgroundColor('rgba(0,0,0,0)')
@@ -52,12 +72,27 @@
     controls.autoRotate = !reducedMotion;
     controls.autoRotateSpeed = 0.35;
 
+    const loadTimeout = window.setTimeout(() => {
+      if (!globeReady) { showFallback(); globe.pauseAnimation?.(); }
+    }, 12000);
     globe.onGlobeReady(() => {
+      globeReady = true;
+      window.clearTimeout(loadTimeout);
       scene.classList.add('has-3d');
       host.setAttribute('aria-label', 'Интерактивная 3D-Земля. Вращайте мышью или пальцем, нажимайте на флажки стран.');
     });
-    host.addEventListener('pointerenter', () => { controls.autoRotate = false; });
-    host.addEventListener('pointerleave', () => { controls.autoRotate = !reducedMotion; });
+    // On touch screens pointerenter can fire without a corresponding pointerleave.
+    // Only pause on hover for actual mouse/trackpad users.
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      host.addEventListener('pointerenter', () => { controls.autoRotate = false; });
+      host.addEventListener('pointerleave', () => { controls.autoRotate = !reducedMotion && !document.hidden; });
+    } else {
+      host.addEventListener('pointerdown', () => { controls.autoRotate = false; }, { passive: true });
+      const resume = () => { controls.autoRotate = !reducedMotion && !document.hidden; };
+      host.addEventListener('pointerup', resume, { passive: true });
+      host.addEventListener('pointercancel', resume, { passive: true });
+      host.addEventListener('touchend', resume, { passive: true });
+    }
     document.addEventListener('visibilitychange', () => {
       controls.autoRotate = !reducedMotion && !document.hidden;
     });
@@ -72,6 +107,7 @@
     });
   } catch (error) {
     // The accessible country links and illustrated globe remain available without WebGL.
-    console.warn('3D globe unavailable; showing static fallback.', error);
+    showFallback();
+    console.warn('3D globe unavailable; showing animated illustrated fallback.', error);
   }
 })();
