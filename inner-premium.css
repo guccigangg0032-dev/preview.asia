@@ -1,0 +1,14 @@
+/* Cross-page premium polish, preserving existing content and navigation. */
+body{background:linear-gradient(180deg,#f5f8ff 0%,#fff 42%,#f7faff 100%)}
+.job-header{backdrop-filter:blur(16px);background:#ffffffed;box-shadow:0 2px 22px #0c34740b}
+.job-hero,.page-hero{isolation:isolate;overflow:hidden;position:relative}
+.job-hero:after,.page-hero:after{content:'';position:absolute;z-index:-1;pointer-events:none;right:-95px;top:-190px;width:600px;height:600px;border-radius:50%;border:1px solid #75a4ef48;box-shadow:0 0 0 100px #699cfb05,0 0 0 210px #76aaff04;animation:inner-orbit 16s ease-in-out infinite alternate}
+.page-hero h1,.job-hero h1{letter-spacing:-.065em}
+.job-card,.info-card,.contact-card,.content-panel{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.job-card:hover,.info-card:hover,.contact-card:hover{transform:translateY(-5px);box-shadow:0 23px 52px #17396a18;border-color:#bfd7ff}
+.consult-button,.apply-button,.header-contact{box-shadow:0 12px 30px #205fd125}
+.inner-motion .inner-reveal{opacity:0;transform:translateY(23px);transition:transform .8s cubic-bezier(.15,.8,.2,1),opacity .8s}
+.inner-motion .inner-reveal.inner-visible{opacity:1;transform:none}
+@keyframes inner-orbit{to{transform:translate(-80px,80px) rotate(12deg)}}
+@media(max-width:780px){.page-hero:after,.job-hero:after{width:310px;height:310px;right:-130px;top:-95px;animation-duration:24s}}
+@media(prefers-reduced-motion:reduce){.job-hero:after,.page-hero:after{animation:none}.inner-motion .inner-reveal{opacity:1;transform:none;transition:none}}
