@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1733">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Каталог предложений работы в Польше и Европе от RABOTAVEUROPEKZ. Склады, производство, водители, специалисты. Наличие и условия уточняются.">
+  <title>Вакансии в Польше и Европе — RABOTAVEUROPEKZ</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./vacancies.css">
+  <script src="./vacancies.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#vacancies">Перейти к вакансиям</a>
+  <div class="preview-ribbon">ДЕМОНСТРАЦИОННАЯ ВЕРСИЯ · АКТУАЛЬНОСТЬ ПРЕДЛОЖЕНИЙ УТОЧНЯЕТСЯ</div>
+  <header class="job-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html" aria-label="RABOTAVEUROPEKZ — главная">
+        <span class="brand-mark" aria-hidden="true">◎</span>
+        <span class="brand-text"><strong>RABOTAV<span>EUROPE</span>KZ</strong><small>Следуй за мечтой</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="./index.html">Главная</a>
+        <a href="./vacancies.html" aria-current="page">Вакансии</a>
+        <a href="./directions.html">Страны</a>
+        <a href="./about.html">О нас</a>
+        <a href="./steps.html">Этапы</a>
+        <a href="./faq.html">Вопросы</a>
+        <a href="./contacts.html">Контакты</a>
+      </nav>
+      <a class="header-contact" href="https://wa.me/77052753333?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8E" target="_blank" rel="noopener noreferrer">Консультация ↗</a>
+    </div>
+  </header>
+  <main>
+    <section class="job-hero" aria-labelledby="hero-heading">
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <a class="back-link" href="./index.html">← На главную</a>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> RABOTAVEUROPEKZ / КАТАЛОГ ВАКАНСИЙ</p>
+        <h1 id="hero-heading">Найди свою <em>возможность</em><br>работать в Европе.</h1>
+        <p class="hero-description">Склады, производство, рабочие специальности и транспорт. Изучи описания предложений, сравни условия и задай нам вопросы перед оформлением.</p>
+        <div class="hero-metrics">
+          <div><strong id="total-jobs">53</strong><span>предложения из материалов</span></div>
+          <div><strong>5</strong><span>направлений работы</span></div>
+          <div><strong>4</strong><span>части исходных материалов</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="vacancies" class="catalog-section" aria-labelledby="catalog-heading">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-eyebrow">ВЫБЕРИ НАПРАВЛЕНИЕ</p>
+            <h2 id="catalog-heading">Каталог предложений</h2>
+          </div>
+          <p>Данные перенесены из полученных материалов. Наличие мест, ставки брутто/нетто, жильё и требования подтверждаются менеджером для конкретного предложения.</p>
+        </div>
+        <div class="catalog-toolbar">
+          <label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Поиск вакансий</span><input id="job-search" type="search" placeholder="Должность, город, работодатель..." autocomplete="off"></label>
+          <label class="select-field"><span class="sr-only">Категория</span><select id="job-category"><option value="Все">Все направления</option></select></label>
+          <button id="reset-filters" type="button" class="reset-button">Сбросить</button>
+        </div>
+        <div class="catalog-status"><span id="result-count" aria-live="polite">Загрузка предложений…</span><span class="status-pill">● Актуальность уточняется</span></div>
+        <div id="job-grid" class="job-grid" aria-live="polite"></div>
+        <div id="job-empty" class="empty-state" hidden><strong>Ничего не найдено</strong><p>Попробуй другой город, название работы или категорию.</p></div>
+        <div id="catalog-error" class="empty-state" hidden><strong>Не удалось загрузить каталог</strong><p>Попробуй обновить страницу или напиши нам для подбора вакансии.</p></div>
+        <div class="load-more-wrap"><button id="load-more" class="load-more" type="button" hidden>Показать ещё вакансии ↓</button></div>
+      </div>
+    </section>
+    <section class="consult-section">
+      <div class="container consultation">
+        <div><p class="eyebrow">НЕ УВЕРЕН, ЧТО ВЫБРАТЬ?</p><h2>Поможем разобраться<br>в деталях.</h2><p>Перед поездкой важно проверить договор, документы, условия проживания и реальную доступность рабочего места.</p></div>
+        <a href="https://wa.me/77052753333?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%20%D0%B2%20%D0%95%D0%B2%D1%80%D0%BE%D0%BF%D0%B5" class="consult-button" target="_blank" rel="noopener noreferrer">Написать менеджеру ↗</a>
+      </div>
+    </section>
+  </main>
+  <dialog id="job-dialog" class="job-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-head"><span id="dialog-category" class="dialog-tag"></span><button type="button" id="close-dialog" class="dialog-close" aria-label="Закрыть">×</button></div>
+    <div class="dialog-body"><h2 id="dialog-title"></h2><div id="dialog-location" class="dialog-location"></div><p class="dialog-notice">Условия взяты из исходного описания и могут измениться. Актуальность, оплату и оформление необходимо подтвердить.</p><h3>Описание и условия из материалов</h3><div id="dialog-details" class="dialog-details"></div><p id="dialog-source" class="dialog-source"></p></div>
+    <div class="dialog-footer"><a id="dialog-apply" class="apply-button" target="_blank" rel="noopener noreferrer">Уточнить вакансию в WhatsApp ↗</a></div>
+  </dialog>
+  <footer class="job-footer"><div class="container footer-inner"><span>© RABOTAVEUROPEKZ · Демонстрационный каталог</span><a href="./contacts.html">Контакты ↗</a></div></footer>
+</body>
+</html>
