@@ -3,15 +3,19 @@
   const menuButton = document.querySelector('.menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const interestSelect = document.getElementById('interest');
-  // Keep the prefilled WhatsApp inquiry aligned with the countries shown in the demo.
+  // New country options. Lithuania is visible but not accepting applications.
   if (interestSelect) {
-    for (const option of [...interestSelect.options]) {
-      if (option.value.includes('США') || option.value.includes('Польше —') || option.value.includes('других странах')) option.remove();
-    }
-    for (const [name, country] of [['Польша', '🇵🇱'], ['Германия', '🇩🇪'], ['Литва', '🇱🇹'], ['Словакия', '🇸🇰'], ['Нидерланды', '🇳🇱']]) {
-      const option = new Option(country + ' ' + name, 'Работа — ' + name);
+    [...interestSelect.options].forEach(option => option.remove());
+    interestSelect.add(new Option('Подобрать направление', 'Подобрать направление'));
+    const countries = [['Польша','🇵🇱'],['Германия','🇩🇪'],['Литва','🇱🇹'],
+      ['Словакия','🇸🇰'],['Нидерланды','🇳🇱'],['Чехия','🇨🇿'],
+      ['Сербия','🇷🇸'],['Черногория','🇲🇪'],['Турция','🇹🇷']];
+    for (const [name, flag] of countries) {
+      const option = new Option(flag + ' ' + name + (name === 'Литва' ? ' · приостановлено' : ''), 'Работа — ' + name);
+      if (name === 'Литва') option.disabled = true;
       interestSelect.add(option);
     }
+    interestSelect.add(new Option('🇺🇸 США · отдельная консультация', 'Консультация по США'));
   }
   const stepsGrid = document.querySelector('.steps-grid');
   if (stepsGrid) {
