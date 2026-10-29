@@ -1,0 +1,44 @@
+/* Client requested direction updates · 2026-10-30 */
+.premium-destination-line span{max-width:900px;line-height:1.7}
+.globe-country-nav{flex-wrap:wrap;justify-content:center}
+.globe-country-nav a{white-space:nowrap}
+.country-pause-badge{position:absolute;z-index:3;left:16px;bottom:16px;display:inline-block;background:#fff0ed;color:#a53128;border:1px solid #ffc4b9;border-radius:100px;font-size:11px;font-weight:800;padding:9px 13px;box-shadow:0 9px 25px #0002}
+.v2-card.is-paused{border-color:#ebc8c6}
+.v2-card.is-paused .country-image{filter:saturate(.65)}
+.v2-card.is-paused .card-details{background:#fffaf9}
+.is-paused .official-link{color:#9b382d}
+.info-card.is-paused{background:#fff7f5;border-color:#f5c5bc}
+.info-card.is-paused .number{color:#a53128}
+.info-card[id]{scroll-margin-top:110px}
+.usa-separate{margin-top:28px;background:linear-gradient(120deg,#eef5ff,#fff);border:1px solid #dbe8ff;border-radius:18px;padding:28px}
+.usa-separate p{line-height:1.75}
+/* Independent United States page */
+.usa-page{margin:0;min-height:100vh;font-family:Manrope,Arial,sans-serif;background:#f5f8ff;color:#152b4b}
+.usa-page a{color:inherit}
+.usa-page .usa-topbar{background:#0a1e44;color:#fff;padding:10px 20px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.08em}
+.usa-page .usa-header{background:#fff;border-bottom:1px solid #e4ebf6}
+.usa-page .usa-header-inner{margin:0 auto;max-width:1180px;padding:17px 25px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.usa-page .usa-logo{text-decoration:none;font-size:17px;font-weight:900;letter-spacing:-.04em;color:#10274f}
+.usa-page .usa-logo span{color:#1656ce}
+.usa-page .usa-header-nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.usa-page .usa-header-nav a{text-decoration:none;font-size:12px;font-weight:800;color:#345073}
+.usa-page .usa-header-nav a:hover{color:#1252cf}
+.usa-page .usa-shell{width:min(1100px,calc(100% - 40px));margin-inline:auto}
+.usa-page .usa-hero{padding:88px 0 72px;background:radial-gradient(circle at 75% 25%,#386dc1 0,#132f65 46%,#071a3c 100%);color:#fff;overflow:hidden}
+.usa-page .usa-eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#c2d7ff}
+.usa-page .usa-hero h1{font-size:clamp(38px,6.7vw,76px);line-height:1.06;letter-spacing:-.06em;max-width:850px;margin:22px 0}
+.usa-page .usa-hero p{max-width:620px;line-height:1.8;color:#e1e9f8}
+.usa-page .usa-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.usa-page .usa-button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;border-radius:30px;padding:12px 23px;text-decoration:none;font-size:13px;font-weight:800;background:#fff;color:#1549a1}
+.usa-page .usa-button.secondary{background:transparent;color:#fff;border:1px solid #9ab2dc}
+.usa-page .usa-section{padding:64px 0}
+.usa-page .usa-section h2{font-size:clamp(27px,4vw,40px);letter-spacing:-.04em}
+.usa-page .usa-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.usa-page .usa-box{background:#fff;border:1px solid #e2eafa;border-radius:20px;padding:26px;box-shadow:0 14px 45px #11275509}
+.usa-page .usa-box h3{margin:8px 0;font-size:18px}
+.usa-page .usa-box p{color:#596e88;line-height:1.8;font-size:13px}
+.usa-page .usa-notice{margin-top:30px;border-radius:15px;background:#eaf2ff;border:1px solid #c8d9f4;padding:20px 24px;font-size:13px;line-height:1.8}
+.usa-page .usa-footer{background:#0b2047;color:#e5ecf8;padding:32px 0;font-size:12px}
+.usa-page .usa-footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.usa-page .site-lang-picker{position:relative;z-index:4}
+@media(max-width:700px){.usa-page .usa-hero{padding:65px 0}.usa-page .usa-grid{grid-template-columns:1fr}.usa-page .usa-header-inner{padding:15px 17px}.usa-page .usa-actions{flex-direction:column;align-items:stretch}.usa-page .usa-button{width:100%}.globe-country-nav{gap:7px}.globe-country-nav a{font-size:10px}}
