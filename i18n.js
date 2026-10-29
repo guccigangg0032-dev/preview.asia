@@ -5,7 +5,8 @@ const TRANSLATION_ROWS = [["Главная","Басты бет","Home","Početna
   const languageOptions = [
     ['ru','🇷🇺 Русский'],['kk','🇰🇿 Қазақша'],['en','🇬🇧 English'],
     ['sr','🇷🇸 Srpski'],['ky','🇰🇬 Кыргызча'],['uz','🇺🇿 O‘zbekcha'],
-    ['tg','🇹🇯 Тоҷикӣ'],['az','🇦🇿 Azərbaycanca']
+    ['tg','🇹🇯 Тоҷикӣ'],['az','🇦🇿 Azərbaycanca'],
+    ['pl','🇵🇱 Polski'],['es','🇪🇸 Español']
   ];
   const columns = {kk:1,en:2,sr:3,ky:4,uz:5,tg:6,az:7};
   const lookup = {};
@@ -14,6 +15,9 @@ const TRANSLATION_ROWS = [["Главная","Басты бет","Home","Početna
     TRANSLATION_ROWS.forEach(row => table.set(row[0], row[columns[language]]));
     lookup[language] = table;
   });
+  const extraLanguageRows = [["Главная","Strona główna","Inicio"],["Вакансии","Oferty pracy","Vacantes"],["Страны","Kraje","Países"],["О нас","O nas","Sobre nosotros"],["Этапы","Etapy","Etapas"],["Вопросы","Pytania","Preguntas"],["Отзывы","Opinie","Reseñas"],["Видеоотзывы","Opinie wideo","Testimonios en vídeo"],["Наши поездки","Nasze podróże","Nuestros viajes"],["Контакты","Kontakt","Contacto"],["Связаться","Kontakt","Contactar"],["Консультация","Konsultacja","Consulta"],["Следуй за мечтой","Podążaj za marzeniem","Sigue tus sueños"],["Перейти к содержимому","Przejdź do treści","Ir al contenido"],["ДЕМОНСТРАЦИОННАЯ ВЕРСИЯ","WERSJA DEMONSTRACYJNA","VERSIÓN DE DEMOSTRACIÓN"],["Работа в Европе.","Praca w Europie.","Trabajo en Europa."],["От заявки до выезда.","Od zgłoszenia do wyjazdu.","Desde la solicitud hasta la salida."],["Получить консультацию","Umów konsultację","Solicitar consulta"],["Посмотреть вакансии","Zobacz oferty pracy","Ver vacantes"],["Посмотреть фотографии","Zobacz zdjęcia","Ver fotos"],["Узнать условия","Sprawdź warunki","Conocer condiciones"],["Уточнить направление","Zapytaj o kierunek","Consultar destino"],["Подробнее о США","Więcej o USA","Más sobre EE. UU."],["Официальная информация","Informacje urzędowe","Información oficial"],["Приём заявок приостановлен","Przyjmowanie zgłoszeń wstrzymane","Solicitudes suspendidas"],["ИЗМЕНЕНИЯ МИГРАЦИОННЫХ ПРАВИЛ","ZMIANY W PRZEPISACH MIGRACYJNYCH","CAMBIOS EN LA NORMATIVA MIGRATORIA"],["ОТДЕЛЬНОЕ НАПРАВЛЕНИЕ","ODRĘBNY KIERUNEK","DESTINO INDEPENDIENTE"],["Все направления","Wszystkie kierunki","Todos los destinos"],["Выбор страны","Wybór kraju","Elegir país"],["Польша","Polska","Polonia"],["Германия","Niemcy","Alemania"],["Литва","Litwa","Lituania"],["Словакия","Słowacja","Eslovaquia"],["Нидерланды","Holandia","Países Bajos"],["Чехия","Czechy","Chequia"],["Сербия","Serbia","Serbia"],["Черногория","Czarnogóra","Montenegro"],["Турция","Turcja","Turquía"],["США","USA","EE. UU."],["🇵🇱 Польша","🇵🇱 Polska","🇵🇱 Polonia"],["🇩🇪 Германия","🇩🇪 Niemcy","🇩🇪 Alemania"],["🇱🇹 Литва","🇱🇹 Litwa","🇱🇹 Lituania"],["🇸🇰 Словакия","🇸🇰 Słowacja","🇸🇰 Eslovaquia"],["🇳🇱 Нидерланды","🇳🇱 Holandia","🇳🇱 Países Bajos"],["🇨🇿 Чехия","🇨🇿 Czechy","🇨🇿 Chequia"],["🇷🇸 Сербия","🇷🇸 Serbia","🇷🇸 Serbia"],["🇲🇪 Черногория","🇲🇪 Czarnogóra","🇲🇪 Montenegro"],["🇹🇷 Турция","🇹🇷 Turcja","🇹🇷 Turquía"],["🇺🇸 США","🇺🇸 USA","🇺🇸 EE. UU."],["Работа в Польше","Praca w Polsce","Trabajo en Polonia"],["Работа в Германии","Praca w Niemczech","Trabajo en Alemania"],["Работа в Литве","Praca na Litwie","Trabajo en Lituania"],["Работа в Словакии","Praca na Słowacji","Trabajo en Eslovaquia"],["Работа в Нидерландах","Praca w Holandii","Trabajo en los Países Bajos"],["Работа в Чехии","Praca w Czechach","Trabajo en Chequia"],["Работа в Сербии","Praca w Serbii","Trabajo en Serbia"],["Работа в Черногории","Praca w Czarnogórze","Trabajo en Montenegro"],["Работа в Турции","Praca w Turcji","Trabajo en Turquía"],["Направление США","Kierunek USA","Destino EE. UU."],["Страны для консультаций","Kraje do konsultacji","Países disponibles para consulta"],["Больше направлений.","Więcej kierunków.","Más destinos."],["Ваш выбор.","Twój wybór.","Tu elección."],["Выберите страну","Wybierz kraj","Elige un país"],["Листай вниз","Przewiń w dół","Desliza hacia abajo"],["ВЫБЕРИ НАПРАВЛЕНИЕ","WYBIERZ KIERUNEK","ELIGE UN DESTINO"],["Можно ли поехать без знания языка?","Czy można wyjechać bez znajomości języka?","¿Se puede viajar sin saber el idioma?"],["Какие документы понадобятся?","Jakie dokumenty będą potrzebne?","¿Qué documentos se necesitan?"],["Сколько можно зарабатывать?","Ile można zarobić?","¿Cuánto se puede ganar?"],["Предоставляется ли жильё?","Czy zapewnione jest zakwaterowanie?","¿Se ofrece alojamiento?"],["Сколько длится оформление?","Ile trwa procedura?","¿Cuánto dura el trámite?"],["Все вакансии на сайте сейчас открыты?","Czy wszystkie oferty są aktualne?","¿Todas las vacantes están abiertas?"],["Можно ли устроиться без знания языка?","Czy można pracować bez znajomości języka?","¿Se puede trabajar sin saber el idioma?"],["Как понять, какая будет зарплата на руки?","Jak ustalić wynagrodzenie netto?","¿Cómo calcular el salario neto?"],["Какие документы нужны?","Jakie dokumenty są potrzebne?","¿Qué documentos necesito?"],["Сколько времени занимает оформление?","Ile trwa procedura?","¿Cuánto dura el proceso?"],["Работа за рубежом","Praca za granicą","Trabajo en el extranjero"],["НАПРАВЛЕНИЯ","KIERUNKI","DESTINOS"],["Подбор по запросу","Dobór na zapytanie","Selección bajo consulta"],["Условия по запросу","Warunki na zapytanie","Condiciones bajo consulta"],["Выбор страны.","Wybór kraju.","Elección del país."],["Понятный план.","Przejrzysty plan.","Un plan claro."],["Консультации по США","Konsultacje dotyczące USA","Consultas sobre EE. UU."],["Подробнее о направлении США","Więcej o kierunku USA","Más sobre el destino EE. UU."],["От первого вопроса до понятного плана.","Od pierwszego pytania do jasnego planu.","Desde la primera pregunta hasta un plan claro."],["США. От первого вопроса до понятного плана.","USA. Od pierwszego pytania do jasnego planu.","EE. UU. De la primera pregunta a un plan claro."],["Обсудить США в WhatsApp","Zapytaj o USA przez WhatsApp","Consultar EE. UU. por WhatsApp"],["Другие направления","Inne kierunki","Otros destinos"],["Что уточняем на консультации","Co omawiamy podczas konsultacji","Qué aclaramos durante la consulta"],["Цель поездки","Cel wyjazdu","Objetivo del viaje"],["Документы и требования","Dokumenty i wymagania","Documentos y requisitos"],["Порядок дальнейших действий","Kolejne kroki","Próximos pasos"],["Вернуться на главную","Powrót do strony głównej","Volver al inicio"],["Задать вопрос","Zadaj pytanie","Hacer una pregunta"],["Написать в WhatsApp","Napisz na WhatsApp","Escribir por WhatsApp"],["Остались вопросы?","Masz pytania?","¿Tienes preguntas?"],["РАБОТА ЗА РУБЕЖОМ","PRACA ZA GRANICĄ","TRABAJO EN EL EXTRANJERO"],["Реальные условия уточняйте у менеджера.","Rzeczywiste warunki potwierdź u konsultanta.","Confirma las condiciones con el asesor."]];
+  lookup.pl = new Map(extraLanguageRows.map(row=>[row[0],row[1]]));
+  lookup.es = new Map(extraLanguageRows.map(row=>[row[0],row[2]]));
   const originalText = new WeakMap();
   const originalAttributes = new WeakMap();
   const pageNames = {
@@ -27,7 +31,15 @@ const TRANSLATION_ROWS = [["Главная","Басты бет","Home","Početna
     'reviews.html':['Отзывы','Пікірлер','Reviews','Utisci','Пикирлер','Sharhlar','Шарҳҳо','Rəylər'],
     'journeys.html':['Наши поездки','Сапарларымыз','Our trips','Naša putovanja','Биздин сапарлар','Safarlarimiz','Сафарҳои мо','Səfərlərimiz']
   };
-  const languageIndex = {ru:0,kk:1,en:2,sr:3,ky:4,uz:5,tg:6,az:7};
+  const languageIndex = {ru:0,kk:1,en:2,sr:3,ky:4,uz:5,tg:6,az:7,pl:8,es:9};
+  const extraPageNames={
+    'index.html':['Strona główna','Inicio'],'vacancies.html':['Oferty pracy','Vacantes'],
+    'about.html':['O nas','Sobre nosotros'],'directions.html':['Kraje','Países'],
+    'steps.html':['Etapy','Etapas'],'faq.html':['Pytania','Preguntas frecuentes'],
+    'contacts.html':['Kontakt','Contacto'],'reviews.html':['Opinie','Reseñas'],
+    'journeys.html':['Nasze podróże','Nuestros viajes']};
+  Object.entries(extraPageNames).forEach(([page,labels])=>{pageNames[page].push(...labels);});
+  pageNames['usa.html']=['США','АҚШ','USA','SAD','АКШ','AQSH','ИМА','ABŞ','USA','EE. UU.'];
   const notices = {
     kk:'Аудармалар тексерілуде. Кейбір толық сипаттамалар әзірге орыс тілінде берілген.',
     en:'Translations are being reviewed. Some detailed descriptions are still in Russian.',
@@ -35,7 +47,9 @@ const TRANSLATION_ROWS = [["Главная","Басты бет","Home","Početna
     ky:'Котормолор текшерилүүдө. Айрым толук сүрөттөмөлөр азырынча орус тилинде.',
     uz:'Tarjimalar tekshirilmoqda. Ayrim batafsil tavsiflar hozircha rus tilida.',
     tg:'Тарҷумаҳо санҷида мешаванд. Баъзе тавсифҳои муфассал ҳоло ба забони русӣ ҳастанд.',
-    az:'Tərcümələr yoxlanılır. Bəzi ətraflı təsvirlər hələ rus dilindədir.'
+    az:'Tərcümələr yoxlanılır. Bəzi ətraflı təsvirlər hələ rus dilindədir.',
+    pl:'Tłumaczenie jest sprawdzane. Część szczegółowych opisów pozostaje w języku rosyjskim.',
+    es:'La traducción está en revisión. Algunas descripciones detalladas siguen en ruso.'
   };
   let language = 'ru';
   let updating = false;
