@@ -20,7 +20,7 @@
   if (!search || !category || !grid) return;
   let jobs = [];
   let visibleCount = 12;
-  const supportedCountries = ['Польша', 'Германия', 'Литва', 'Словакия', 'Нидерланды'];
+  const supportedCountries = ['Польша', 'Германия', 'Литва', 'Словакия', 'Нидерланды', 'Чехия', 'Сербия', 'Черногория', 'Турция'];
   const requestedCountry = new URLSearchParams(window.location.search).get('country');
   let selectedCountry = supportedCountries.includes(requestedCountry) ? requestedCountry : '';
   if (selectedCountry) {
@@ -30,8 +30,8 @@
     if (hint) {
       const heading = hint.querySelector('strong');
       const paragraph = hint.querySelector('p');
-      if (heading) heading.textContent = 'Нет опубликованных вакансий: ' + selectedCountry;
-      if (paragraph) paragraph.textContent = 'Подтвердите актуальные предложения и требования у менеджера или выберите другую страну.';
+      if (heading) heading.textContent = selectedCountry === 'Литва' ? 'Литва: приём заявок временно приостановлен' : 'Нет опубликованных вакансий: ' + selectedCountry;
+      if (paragraph) paragraph.textContent = selectedCountry === 'Литва' ? 'Компания временно не принимает заявки в Литву из-за изменений миграционных правил. Это не общий запрет на трудоустройство в стране.' : 'Подтвердите актуальные предложения и требования у менеджера или выберите другую страну.';
     }
   }
   const wa = 'https://wa.me/77052753333?text=';
