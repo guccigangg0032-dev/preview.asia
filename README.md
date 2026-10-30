@@ -1,9 +1,17 @@
-# preview.asia
+# RABOTAVEUROPEKZ · demo website
 
-Static GitHub Pages landing-page demo for RABOTAVEUROPEKZ. The first preview is hosted at the domain root. No catalog of other client sites is published at this stage.
+Статический многостраничный сайт проекта RABOTAVEUROPEKZ на GitHub Pages. Основной домен: https://rabotaveuropekz.com/ (см. CNAME). Репозиторий исторически назывался preview.asia.
 
-The demo uses no backend and collects no applicant information. Calls to action open the business WhatsApp conversation with a pre-filled inquiry.
+## Страницы
+- index.html: главная, направления, консультация, FAQ
+- directions.html: страны с иллюстративными фотографиями
+- vacancies.html: каталог, фильтры и поиск
+- jobs/*.html: 53 отдельные страницы вакансий из предоставленных материалов
+- steps.html, about.html, faq.html, contacts.html, usa.html, reviews.html, journeys.html
+- photo-credits.html: источники и условия использования фото
+- 404.html: страница ошибки
 
-Deploy from repository root on `main` with GitHub Pages. Configure custom domain `preview.asia` after a dedicated repository is created and Pages is enabled. Set DNS records at ps.kz per current GitHub Pages guidance. Do not point `preview.asia` to the unrelated 777xsz.shop Pages repository.
+## Публикация и ограничения
+Сайт по-прежнему является демоверсией: noindex/nofollow. До полноценного коммерческого запуска требуется утвердить тексты, подтверждённые вакансии, стоимость услуг, лицензии на ранее добавленные изображения и права на публикацию отзывов/документов. Сайт не принимает платежи и не хранит заявки: переход в WhatsApp осуществляется по клику пользователя. Никакой модуль автоматической выдачи виз или трудоустройства не предусмотрен. Перевод интерфейса на несколько языков реализуется через i18n.js; длинные уникальные описания вакансий на русском, их переводы подлежат отдельной вычитке.
 
-Before client handoff, confirm the company-provided WhatsApp number, vacancy terms and branding. Demo is marked `noindex` and contains a clearly visible demonstration banner.
+Убедиться в отсутствии битых локальных ссылок и проверить отзывчивость на мобильных устройствах перед сменой статуса на производственный.
