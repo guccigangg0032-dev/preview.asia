@@ -52,6 +52,7 @@ const TRANSLATION_ROWS = [["Главная","Басты бет","Home","Početna
     es:'La traducción está en revisión. Algunas descripciones detalladas siguen en ruso.'
   };
   let language = 'ru';
+  const seoTitle = document.title;
   let updating = false;
   const clean = text => text.replace(/\s+/g,' ').trim();
   const translate = text => lookup[language]?.get(clean(text)) || null;
@@ -109,7 +110,7 @@ const TRANSLATION_ROWS = [["Главная","Басты бет","Home","Početna
     updating = false;
     const page = location.pathname.split('/').pop() || 'index.html';
     const localized = pageNames[page] || pageNames['index.html'];
-    document.title = localized[languageIndex[next]]+' | RABOTAVEUROPEKZ';
+    document.title = next === 'ru' ? seoTitle : localized[languageIndex[next]]+' | RABOTAVEUROPEKZ';
     const note = document.querySelector('.site-translation-note');
     if (note) {note.hidden = next === 'ru';note.textContent = notices[next]||'';}
   }

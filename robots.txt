@@ -1,4 +1,4 @@
-# Demo pages retain noindex in HTML until public launch.
+# Public informational pages: indexable. Unverified archival job detail pages retain noindex in HTML.
 User-agent: *
 Allow: /
 Sitemap: https://rabotaveuropekz.com/sitemap.xml
