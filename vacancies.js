@@ -65,7 +65,7 @@
     addTextElement(card,'div','job-location','⌖  ' + (job.location || 'Локация уточняется'));
     const meta = document.createElement('div'); meta.className='job-meta';
     addTextElement(meta,'span','','Условия уточняются');
-    const button = document.createElement('button'); button.type='button';button.className='job-view';button.textContent='Подробнее ↗';button.setAttribute('aria-label','Подробнее: '+job.title);button.addEventListener('click',()=>openJob(job));meta.append(button);
+    const link = document.createElement('a');link.className='job-view';link.textContent='Подробнее ↗';link.href='./jobs/'+encodeURIComponent(job.id)+'.html';link.setAttribute('aria-label','Страница вакансии: '+job.title);meta.append(link);
     card.append(meta); return card;
   }
   function render() {
