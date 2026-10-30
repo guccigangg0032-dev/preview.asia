@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./premium-v2.css?v=20261030-5" />
+  <link rel="stylesheet" href="./premium-v2.css?v=20261030-6" />
   <link rel="stylesheet" href="./premium-motion.css?v=20261028-2" />
 <link rel="stylesheet" href="./i18n.css?v=20261028-1" />
 <link rel="stylesheet" href="./client-updates.css?v=20261030-3" />
@@ -88,9 +88,9 @@
             <div class="globe-explorer-copy">
               <p class="globe-explorer-eyebrow">ИНТЕРАКТИВНАЯ ГЕОГРАФИЯ</p>
               <h2 id="globe-explorer-title">Исследуйте страны на глобусе</h2>
-              <p><span id="globe-country-total">61</span> точка на карте, включая <span id="globe-asia-total">48</span> стран Азии, Египет и страны языков сайта. Карта не означает наличие вакансий во всех странах.</p>
+              <p><span id="globe-country-total">64</span> страны и <span id="globe-city-total">63</span> крупных города СНГ и соседних стран, включая <span id="globe-asia-total">48</span> стран Азии. Наличие вакансий и выездов из конкретных городов уточняется отдельно.</p>
             </div>
-            <label class="globe-explorer-select-label" for="globe-country-select">Найти страну
+            <label class="globe-explorer-select-label" for="globe-country-select">Найти страну или город
               <select id="globe-country-select" class="globe-explorer-select"><option value="">Выберите страну</option></select>
             </label>
           </div>
@@ -99,7 +99,10 @@
             <button type="button" data-globe-filter="asia" aria-pressed="false">Азия</button>
             <button type="button" data-globe-filter="language" aria-pressed="false">Языки сайта</button>
             <button type="button" data-globe-filter="egypt" aria-pressed="false">Египет</button>
+            <button type="button" data-globe-filter="region" aria-pressed="false">СНГ и соседние страны</button>
+            <button type="button" data-globe-filter="cities" aria-pressed="false">Крупные города</button>
           </div>
+          <input type="search" id="globe-city-search" class="globe-city-search" placeholder="Поиск города: Астана, Москва, Ташкент…" aria-label="Найти город" hidden>
           <div id="globe-country-results" class="globe-country-results" aria-label="Выбор страны"></div>
           <div id="globe-country-detail" class="globe-country-detail" role="status" aria-live="polite"><p>Выберите страну на глобусе или в списке.</p></div>
         </section>
@@ -208,7 +211,7 @@
   <footer class="site-footer"><div class="shell footer-top"><div><a class="brand footer-brand" href="#top"><span class="brand-symbol" aria-hidden="true">✳</span><span class="brand-wordmark"><strong>RABOTAV<span>EUROPE</span>KZ</strong><small>Следуй за мечтой</small></span></a><p>Консультации по трудоустройству в Европе и помощь с подготовкой к поездке.</p></div><div class="footer-links"><div><strong>Навигация</strong><a href="./vacancies.html">Вакансии</a><a href="./directions.html">Страны</a><a href="./about.html">О нас</a><a href="./steps.html">Этапы</a><a href="./faq.html">Вопросы</a><a href="./reviews.html">Отзывы</a><a href="./journeys.html">Наши поездки</a><a href="./contacts.html">Контакты</a></div><div><strong>Связь</strong><a href="https://www.instagram.com/rabotaveuropekz/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://wa.me/77052753333" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div></div></div><div class="shell footer-bottom"><span>© <span id="year">2026</span> RABOTAVEUROPEKZ. Работа за рубежом.</span><span>Актуальные вакансии и условия уточняйте у компании.</span><span><a href="./photo-credits.html">Фотографии и лицензии</a></span><span><a href="./privacy.html">Конфиденциальность</a></span><span>Дизайн: <a href="https://777xsz.shop/" target="_blank" rel="noopener noreferrer">777xsz</a></span></div></footer>
   <a class="mobile-fixed-cta" href="#contact">Узнать условия <span>↗</span></a>
   <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.2" defer></script>
-  <script src="./globe-interactive.js?v=20261030-5" defer></script>
+  <script src="./globe-interactive.js?v=20261030-6" defer></script>
   <script src="./script.js" defer></script>
   <script src="./premium-motion.js?v=20261028-2" defer></script>
 <script src="./i18n.js?v=20261030-5" defer></script>

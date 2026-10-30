@@ -156,3 +156,10 @@ body{background:#f8fbff;color:#142344}
 .globe-explorer button:focus-visible,.globe-explorer select:focus-visible,.globe-pin:focus-visible{outline:3px solid #3587ef;outline-offset:3px}
 @media(max-width:760px){.globe-explorer{padding:17px 16px;border-radius:21px}.globe-explorer-toolbar{display:block}.globe-explorer-select-label{width:100%;max-width:none;margin-top:13px}.globe-country-results{max-height:157px}.globe-country-detail.has-selection p{max-width:100%;flex-basis:100%}.globe-pin.globe-pin--featured{width:27px;height:27px;font-size:16px}.globe-pin.globe-pin--dot{width:10px;height:10px;min-width:10px}}
 @media(max-width:440px){.globe-explorer-filters{gap:5px}.globe-explorer-filters button{padding:8px 10px;font-size:10px}.globe-country-choice{font-size:10px;padding:7px 10px}}
+
+/* Extra region/city layer, intentionally separated from job destinations */
+.globe-city-search{display:block;width:100%;min-height:43px;padding:11px 15px;border:1px solid #d5e2f5;border-radius:13px;margin:9px 0 13px;background:white;color:#244574;font:600 12px Manrope,sans-serif}
+.globe-city-search[hidden]{display:none}
+.globe-pin.globe-pin--city{display:grid;place-items:center;width:14px;height:14px;min-width:14px;padding:0;background:#ffc562;color:#a14706;font-size:8px;font-weight:900;line-height:1;border:2px solid white;box-shadow:0 0 0 2px #db963b77,0 3px 10px #192f55a1;transform:translate(-50%,-50%)}
+.globe-pin.globe-pin--city:after{display:none!important}
+.globe-pin.globe-pin--city:hover,.globe-pin.globe-pin--city:focus-visible{background:white;transform:translate(-50%,-50%) scale(1.5)}
