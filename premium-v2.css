@@ -126,3 +126,33 @@ body{background:#f8fbff;color:#142344}
 @media(max-width:920px){.proof-layout{grid-template-columns:1fr;gap:36px}.proof-showcase{max-width:670px}}
 @media(max-width:620px){.globe-country-nav{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding:4px 0 15px}.globe-country-nav span{display:none}.globe-country-nav a{white-space:nowrap;flex:none}.proof-section{padding:76px 0}.proof-copy h2{font-size:40px}.proof-showcase{grid-template-columns:1fr 1fr;gap:10px}.proof-card{min-height:270px;padding:17px;border-radius:16px}.proof-card-kicker{font-size:7px}.proof-play{width:60px;height:60px;font-size:18px}.proof-instagram{width:56px;height:56px;font-size:42px}.proof-card strong{font-size:13px}.proof-card small{font-size:9px}.proof-arrow{right:15px;top:15px;font-size:16px}.globe-pin{width:34px;height:34px;font-size:18px}}
 @media(prefers-reduced-motion:reduce){.interactive-globe,.proof-card,.globe-country-nav a{transition:none}}
+
+
+/* Geographic explorer: 61 points with accessible keyboard/mobile controls */
+.globe-explorer{position:relative;margin:1px auto 23px;padding:22px 23px;border:1px solid #dce8fa;border-radius:25px;background:linear-gradient(118deg,#ffffffed,#eaf3ffef);box-shadow:0 12px 40px rgba(18,55,106,.05);color:#182f56}
+.globe-explorer-toolbar{display:flex;align-items:end;justify-content:space-between;gap:22px}
+.globe-explorer-copy{max-width:660px}
+.globe-explorer-eyebrow{font-size:9px;letter-spacing:.15em;font-weight:900;color:#4776c5;margin:0 0 6px}
+.globe-explorer h2{font-size:clamp(18px,2.3vw,25px);line-height:1.25;letter-spacing:-.035em;margin:2px 0 6px;font-weight:850}
+.globe-explorer-copy>p:last-child{font-size:11px;line-height:1.7;color:#607797;margin:0}
+.globe-explorer-select-label{display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:800;color:#456389;min-width:240px;max-width:330px;width:32%}
+.globe-explorer-select{display:block;width:100%;background:white;border:1px solid #d5e2f5;border-radius:12px;color:#28436b;padding:12px 15px;font-size:12px;min-height:44px;cursor:pointer}
+.globe-explorer-filters{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0 12px}
+.globe-explorer-filters button{border:1px solid #cfdef1;border-radius:100px;padding:9px 14px;font-size:10px;font-weight:800;color:#3d628f;background:#f8fbff;cursor:pointer}
+.globe-explorer-filters button[aria-pressed=true]{background:#225fd2;border-color:#225fd2;color:#fff}
+.globe-country-results{display:flex;flex-wrap:wrap;gap:7px;overflow:auto;max-height:150px;scrollbar-color:#adc6f0 transparent;padding:3px 2px 5px}
+.globe-country-choice{border:1px solid #d8e5f4;background:white;color:#35557d;border-radius:100px;font-size:11px;font-weight:750;padding:8px 11px;cursor:pointer;white-space:nowrap}
+.globe-country-choice:hover,.globe-country-choice[aria-pressed=true]{border-color:#6d9aeb;background:#eaf2ff;color:#164daa}
+.globe-country-detail{margin-top:13px;padding:12px 16px;background:#edf4ff;border-radius:14px;min-height:49px;font-size:12px;color:#526b91;line-height:1.65}
+.globe-country-detail p{margin:0}
+.globe-country-detail strong{color:#143e80;font-size:14px;display:block}
+.globe-country-detail.has-selection{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;justify-content:space-between}
+.globe-country-detail.has-selection p{max-width:65%;flex:1;font-size:11px}
+.globe-country-detail a{display:inline-block;border:1px solid #c4d8fa;background:white;border-radius:100px;padding:9px 13px;font-weight:800;font-size:11px;color:#1654c7;text-decoration:none;white-space:nowrap}
+.globe-pin.globe-pin--dot{width:12px;height:12px;min-width:12px;padding:0;background:#6dc7ed;border:2px solid #fff;box-shadow:0 0 0 2px #1a5fbc6e,0 2px 8px #041c4455;transform:translate(-50%,-50%)}
+.globe-pin.globe-pin--dot:after{display:none!important}
+.globe-pin.globe-pin--dot:hover,.globe-pin.globe-pin--dot:focus-visible{background:#fff;transform:translate(-50%,-50%) scale(1.6)}
+.globe-pin.globe-pin--featured{width:34px;height:34px;font-size:19px}
+.globe-explorer button:focus-visible,.globe-explorer select:focus-visible,.globe-pin:focus-visible{outline:3px solid #3587ef;outline-offset:3px}
+@media(max-width:760px){.globe-explorer{padding:17px 16px;border-radius:21px}.globe-explorer-toolbar{display:block}.globe-explorer-select-label{width:100%;max-width:none;margin-top:13px}.globe-country-results{max-height:157px}.globe-country-detail.has-selection p{max-width:100%;flex-basis:100%}.globe-pin.globe-pin--featured{width:27px;height:27px;font-size:16px}.globe-pin.globe-pin--dot{width:10px;height:10px;min-width:10px}}
+@media(max-width:440px){.globe-explorer-filters{gap:5px}.globe-explorer-filters button{padding:8px 10px;font-size:10px}.globe-country-choice{font-size:10px;padding:7px 10px}}

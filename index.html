@@ -66,23 +66,43 @@
         <div class="premium-scene">
           <div class="premium-scene-orbit" aria-hidden="true"></div>
           <div id="interactive-globe" class="interactive-globe" role="group" aria-label="Интерактивный глобус с выбором страны"></div>
-          <img class="premium-globe-image" src="./assets/hero-globe-v2.png" alt="Объёмная иллюстрация земного шара с Европой" width="1400" height="1100" fetchpriority="high">
+          <img class="premium-globe-image" src="./assets/hero-globe-v2.png" alt="Объёмная иллюстрация Земли" width="1400" height="1100" fetchpriority="high">
           <div class="premium-float-card premium-float-left"><span class="float-icon">▤</span><div><small>ПЕРЕД ОФОРМЛЕНИЕМ</small><strong>Обсуждаем условия и договор</strong></div></div>
           <div class="premium-float-card premium-float-right"><span class="float-icon">🇵🇱</span><div><small>ПОПУЛЯРНОЕ НАПРАВЛЕНИЕ</small><strong>Вакансии в Польше по запросу</strong></div></div>
         </div>
-        <div class="globe-country-nav" aria-label="Выберите страну на глобусе">
-          <span>НАПРАВЛЕНИЯ НА ГЛОБУСЕ</span>
-          <a data-globe-country="poland" href="./vacancies.html?country=%D0%9F%D0%BE%D0%BB%D1%8C%D1%88%D0%B0">🇵🇱 Польша</a>
-          <a data-globe-country="germany" href="./vacancies.html?country=%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D1%8F">🇩🇪 Германия</a>
-          <a data-globe-country="lithuania" href="./vacancies.html?country=%D0%9B%D0%B8%D1%82%D0%B2%D0%B0">🇱🇹 Литва</a>
-          <a data-globe-country="slovakia" href="./vacancies.html?country=%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D0%BA%D0%B8%D1%8F">🇸🇰 Словакия</a>
-          <a data-globe-country="netherlands" href="./vacancies.html?country=%D0%9D%D0%B8%D0%B4%D0%B5%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D1%8B">🇳🇱 Нидерланды</a>
-          <a href="./directions.html#czechia">🇨🇿 Чехия</a>
-          <a href="./directions.html#serbia">🇷🇸 Сербия</a>
-          <a href="./directions.html#montenegro">🇲🇪 Черногория</a>
-          <a href="./directions.html#turkey">🇹🇷 Турция</a>
-          <a href="./usa.html">🇺🇸 США</a>
+        <div class="globe-country-nav" aria-label="Направления для консультаций">
+          <span>НАПРАВЛЕНИЯ ДЛЯ КОНСУЛЬТАЦИЙ</span>
+          <a data-globe-country="poland" href="./vacancies.html">🇵🇱 Польша</a>
+          <a data-globe-country="germany" href="./directions.html#germany">🇩🇪 Германия</a>
+          <a data-globe-country="lithuania" href="./directions.html#lithuania">🇱🇹 Литва</a>
+          <a data-globe-country="slovakia" href="./directions.html#slovakia">🇸🇰 Словакия</a>
+          <a data-globe-country="netherlands" href="./directions.html#netherlands">🇳🇱 Нидерланды</a>
+          <a data-globe-country="czechia" href="./directions.html#czechia">🇨🇿 Чехия</a>
+          <a data-globe-country="serbia" href="./directions.html#serbia">🇷🇸 Сербия</a>
+          <a data-globe-country="montenegro" href="./directions.html#montenegro">🇲🇪 Черногория</a>
+          <a data-globe-country="turkey" href="./directions.html#turkey">🇹🇷 Турция</a>
+          <a data-globe-country="usa" href="./usa.html">🇺🇸 США</a>
         </div>
+        <section id="globe-explorer" class="globe-explorer" aria-labelledby="globe-explorer-title">
+          <div class="globe-explorer-toolbar">
+            <div class="globe-explorer-copy">
+              <p class="globe-explorer-eyebrow">ИНТЕРАКТИВНАЯ ГЕОГРАФИЯ</p>
+              <h2 id="globe-explorer-title">Исследуйте страны на глобусе</h2>
+              <p><span id="globe-country-total">61</span> точка на карте, включая <span id="globe-asia-total">48</span> стран Азии, Египет и страны языков сайта. Карта не означает наличие вакансий во всех странах.</p>
+            </div>
+            <label class="globe-explorer-select-label" for="globe-country-select">Найти страну
+              <select id="globe-country-select" class="globe-explorer-select"><option value="">Выберите страну</option></select>
+            </label>
+          </div>
+          <div class="globe-explorer-filters" role="group" aria-label="Группы стран">
+            <button type="button" data-globe-filter="destination" aria-pressed="true">Направления</button>
+            <button type="button" data-globe-filter="asia" aria-pressed="false">Азия</button>
+            <button type="button" data-globe-filter="language" aria-pressed="false">Языки сайта</button>
+            <button type="button" data-globe-filter="egypt" aria-pressed="false">Египет</button>
+          </div>
+          <div id="globe-country-results" class="globe-country-results" aria-label="Выбор страны"></div>
+          <div id="globe-country-detail" class="globe-country-detail" role="status" aria-live="polite"><p>Выберите страну на глобусе или в списке.</p></div>
+        </section>
         <div class="premium-destination-line"><span>ПОЛЬША · ГЕРМАНИЯ · ЛИТВА · СЛОВАКИЯ · НИДЕРЛАНДЫ · ЧЕХИЯ · СЕРБИЯ · ЧЕРНОГОРИЯ · ТУРЦИЯ · США</span><a href="#directions">Листай вниз ↓</a></div>
       </div>
     </section>
@@ -188,7 +208,7 @@
   <footer class="site-footer"><div class="shell footer-top"><div><a class="brand footer-brand" href="#top"><span class="brand-symbol" aria-hidden="true">✳</span><span class="brand-wordmark"><strong>RABOTAV<span>EUROPE</span>KZ</strong><small>Следуй за мечтой</small></span></a><p>Консультации по трудоустройству в Европе и помощь с подготовкой к поездке.</p></div><div class="footer-links"><div><strong>Навигация</strong><a href="./vacancies.html">Вакансии</a><a href="./directions.html">Страны</a><a href="./about.html">О нас</a><a href="./steps.html">Этапы</a><a href="./faq.html">Вопросы</a><a href="./reviews.html">Отзывы</a><a href="./journeys.html">Наши поездки</a><a href="./contacts.html">Контакты</a></div><div><strong>Связь</strong><a href="https://www.instagram.com/rabotaveuropekz/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://wa.me/77052753333" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div></div></div><div class="shell footer-bottom"><span>© <span id="year">2026</span> RABOTAVEUROPEKZ. Демонстрационный дизайн.</span><span>Это концепт. Актуальные вакансии и условия уточняйте у компании.</span><span><a href="./photo-credits.html">Фотографии и лицензии</a></span><span>Дизайн: <a href="https://777xsz.shop/" target="_blank" rel="noopener noreferrer">777xsz</a></span></div></footer>
   <a class="mobile-fixed-cta" href="#contact">Узнать условия <span>↗</span></a>
   <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.2" defer></script>
-  <script src="./globe-interactive.js?v=20261028-2" defer></script>
+  <script src="./globe-interactive.js?v=20261030-4" defer></script>
   <script src="./script.js" defer></script>
   <script src="./premium-motion.js?v=20261028-2" defer></script>
 <script src="./i18n.js?v=20261030-2" defer></script>
