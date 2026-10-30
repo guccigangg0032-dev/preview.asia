@@ -1,0 +1,4 @@
+# Demo pages retain noindex in HTML until public launch.
+User-agent: *
+Allow: /
+Sitemap: https://rabotaveuropekz.com/sitemap.xml
