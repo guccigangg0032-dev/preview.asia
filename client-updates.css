@@ -43,25 +43,66 @@
 .usa-page .site-lang-picker{position:relative;z-index:4}
 @media(max-width:700px){.usa-page .usa-hero{padding:65px 0}.usa-page .usa-grid{grid-template-columns:1fr}.usa-page .usa-header-inner{padding:15px 17px}.usa-page .usa-actions{flex-direction:column;align-items:stretch}.usa-page .usa-button{width:100%}.globe-country-nav{gap:7px}.globe-country-nav a{font-size:10px}}
 
-
-/* Vacancy card imagery | 2026-10-30 */
+/* Destination photo cards: real location photography, no synthetic people. */
 .v2-card .country-image.country-germany,
 .v2-card .country-image.country-lithuania,
 .v2-card .country-image.country-slovakia,
-.v2-card .country-image.country-netherlands{
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center;
-}
-.v2-card .country-image.country-germany{background-image:linear-gradient(0deg,rgba(8,24,51,.35),rgba(8,24,51,.04) 52%),url("./assets/germany.jpg");}
-.v2-card .country-image.country-lithuania{background-image:linear-gradient(0deg,rgba(8,24,51,.35),rgba(8,24,51,.04) 52%),url("./assets/lithuania.webp");}
-.v2-card .country-image.country-slovakia{background-image:linear-gradient(0deg,rgba(8,24,51,.35),rgba(8,24,51,.04) 52%),url("./assets/slovakia.jpg");}
-.v2-card .country-image.country-netherlands{background-image:linear-gradient(0deg,rgba(8,24,51,.35),rgba(8,24,51,.04) 52%),url("./assets/netherlands.jpg");}
+.v2-card .country-image.country-netherlands,
+.v2-card .country-image.country-czechia,
+.v2-card .country-image.country-serbia,
+.v2-card .country-image.country-montenegro,
+.v2-card .country-image.country-turkey,
+.v2-card .country-image.country-usa {background-repeat:no-repeat;background-position:center;background-size:cover;}
+.v2-card .country-image.country-germany{background-image:linear-gradient(0deg,rgba(5,23,55,.34),rgba(5,23,55,.03) 58%),url("./assets/germany.jpg");}
+.v2-card .country-image.country-lithuania{background-image:linear-gradient(0deg,rgba(5,23,55,.34),rgba(5,23,55,.03) 58%),url("./assets/lithuania.webp");}
+.v2-card .country-image.country-slovakia{background-image:linear-gradient(0deg,rgba(5,23,55,.34),rgba(5,23,55,.03) 58%),url("./assets/slovakia.jpg");}
+.v2-card .country-image.country-netherlands{background-image:linear-gradient(0deg,rgba(5,23,55,.34),rgba(5,23,55,.03) 58%),url("./assets/netherlands.jpg");}
+.v2-card .country-image.country-czechia{background-image:linear-gradient(0deg,rgba(5,23,55,.34),rgba(5,23,55,.03) 58%),url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Prague_castle_panorama.jpg/1280px-Prague_castle_panorama.jpg");}
+.v2-card .country-image.country-serbia{background-image:linear-gradient(0deg,rgba(5,23,55,.34),rgba(5,23,55,.03) 58%),url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Kalemegdan%2C_Belgrade.jpg/1280px-Kalemegdan%2C_Belgrade.jpg");}
+.v2-card .country-image.country-montenegro{background-image:linear-gradient(0deg,rgba(5,23,55,.34),rgba(5,23,55,.03) 58%),url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/View_of_Kotor_bay_and_old_town.jpg/1280px-View_of_Kotor_bay_and_old_town.jpg");}
+.v2-card .country-image.country-turkey{background-image:linear-gradient(0deg,rgba(5,23,55,.34),rgba(5,23,55,.03) 58%),url("https://images.unsplash.com/photo-1633773246110-442d2a731938?auto=format&fit=crop&w=1280&q=78");}
+.v2-card .country-image.country-usa{background-image:linear-gradient(0deg,rgba(5,23,55,.34),rgba(5,23,55,.03) 58%),url("https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1280&q=78");}
 .v2-card .country-image.country-germany::before,
 .v2-card .country-image.country-lithuania::before,
 .v2-card .country-image.country-slovakia::before,
-.v2-card .country-image.country-netherlands::before{content:none;}
-.v2-card .country-image.country-germany .country-letter,
-.v2-card .country-image.country-lithuania .country-letter,
-.v2-card .country-image.country-slovakia .country-letter,
-.v2-card .country-image.country-netherlands .country-letter{opacity:.30;}
+.v2-card .country-image.country-netherlands::before,
+.v2-card .country-image.country-czechia::before,
+.v2-card .country-image.country-serbia::before,
+.v2-card .country-image.country-montenegro::before,
+.v2-card .country-image.country-turkey::before,
+.v2-card .country-image.country-usa::before{content:none!important}
+.v2-card .country-letter{display:none}
+.v2-card .country-image{background-color:#244b81}
+.v2-card .country-image::after{background:linear-gradient(0deg,rgba(5,24,54,.2),transparent 52%)}
+.v2-card .country-badge{background:rgba(8,37,80,.78)}
+.v2-card .country-image.country-poland img{filter:none}
+.v2-card .country-image.country-lithuania{filter:saturate(.76)}
+.v2-card .country-image.country-serbia{background-position:center 48%}
+.v2-card .country-image.country-montenegro{background-position:center 52%}
+.v2-card .country-image.country-usa{background-position:center 50%}
+.destination-photo-notice{margin:16px 0 0;color:#6b7d99;font-size:11px;line-height:1.7}
+.info-card#germany::before,
+.info-card#lithuania::before,
+.info-card#slovakia::before,
+.info-card#netherlands::before,
+.info-card#czechia::before,
+.info-card#serbia::before,
+.info-card#montenegro::before,
+.info-card#turkey::before,
+.info-card#usa::before,
+.info-card#poland::before{content:"";display:block;height:146px;margin:-26px -26px 19px;border-radius:19px 19px 0 0;background:#285fa1 center/cover no-repeat}
+.info-card#germany::before{background-image:linear-gradient(0deg,rgba(5,23,55,.20),transparent 60%),url("./assets/germany.jpg")}
+.info-card#lithuania::before{background-image:linear-gradient(0deg,rgba(5,23,55,.20),transparent 60%),url("./assets/lithuania.webp")}
+.info-card#slovakia::before{background-image:linear-gradient(0deg,rgba(5,23,55,.20),transparent 60%),url("./assets/slovakia.jpg")}
+.info-card#netherlands::before{background-image:linear-gradient(0deg,rgba(5,23,55,.20),transparent 60%),url("./assets/netherlands.jpg")}
+.info-card#czechia::before{background-image:linear-gradient(0deg,rgba(5,23,55,.20),transparent 60%),url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Prague_castle_panorama.jpg/1280px-Prague_castle_panorama.jpg")}
+.info-card#serbia::before{background-image:linear-gradient(0deg,rgba(5,23,55,.20),transparent 60%),url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Kalemegdan%2C_Belgrade.jpg/1280px-Kalemegdan%2C_Belgrade.jpg")}
+.info-card#montenegro::before{background-image:linear-gradient(0deg,rgba(5,23,55,.20),transparent 60%),url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/View_of_Kotor_bay_and_old_town.jpg/1280px-View_of_Kotor_bay_and_old_town.jpg")}
+.info-card#turkey::before{background-image:linear-gradient(0deg,rgba(5,23,55,.20),transparent 60%),url("https://images.unsplash.com/photo-1633773246110-442d2a731938?auto=format&fit=crop&w=1280&q=78")}
+.info-card#usa::before{background-image:linear-gradient(0deg,rgba(5,23,55,.20),transparent 60%),url("https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1280&q=78")}
+.info-card#poland::before{background-image:linear-gradient(0deg,rgba(5,23,55,.16),transparent 60%),url("./assets/logistics-v2.png")}
+.info-card{overflow:hidden}
+.info-card .number{position:relative;z-index:1}
+.info-card.is-paused::before{filter:saturate(.7)}
+@media(max-width:760px){.v2-card .country-image{min-height:210px}.v2-featured .country-image{min-height:280px}.info-card#poland::before{height:155px}}
+@media(max-width:480px){.v2-card .country-image{min-height:190px}.v2-card .country-badge{top:12px;left:12px}.info-card::before{height:165px}}
