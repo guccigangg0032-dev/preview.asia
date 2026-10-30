@@ -60,6 +60,11 @@
 
   function pick(country, focusGlobe=true) {
     selected = country;
+    if (!country.groups.includes(group)) {
+      group = country.groups.includes('destination') ? 'destination' : country.groups.includes('asia') ? 'asia' : country.groups.includes('language') ? 'language' : 'egypt';
+      renderSelect();
+      render();
+    }
     select.value = country.code;
     const words = t();
     const description = country.groups.includes('destination') ? words.directions :
@@ -104,7 +109,7 @@
     select.replaceChildren();
     const blank = document.createElement('option');
     blank.value = '';blank.textContent = t().default;select.append(blank);
-    for (const c of [...countries].sort(byName)) {
+    for (const c of countries.filter(c => c.groups.includes(group)).sort(byName)) {
       const option = document.createElement('option');
       option.value=c.code;option.textContent=flag(c.iso)+' '+name(c);
       select.append(option);
@@ -118,7 +123,16 @@
   if (asianCount) asianCount.textContent = String(countries.filter(c=>c.groups.includes('asia')).length);
   renderSelect();
   render();
-  filters.forEach(button => button.addEventListener('click', () => {group = button.dataset.globeFilter;render();}));
+  filters.forEach(button => button.addEventListener('click', () => {
+    group = button.dataset.globeFilter;
+    if (selected && !selected.groups.includes(group)) {
+      selected = null;
+      detail.replaceChildren();
+      const p = document.createElement('p');p.textContent = t().default;detail.append(p);
+      detail.classList.remove('has-selection');
+    }
+    renderSelect();render();
+  }));
   select.addEventListener('change',()=>{const c=countries.find(i=>i.code===select.value);if(c)pick(c);});
   new MutationObserver(() => {
     const next=(document.documentElement.lang||'ru').split('-')[0];
