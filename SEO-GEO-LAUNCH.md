@@ -32,3 +32,11 @@
 - https://developers.google.com/search/docs/appearance/structured-data/job-posting
 - https://developers.google.com/search/docs/fundamentals/seo-starter-guide
 - https://yandex.ru/support/webmaster/ru/controlling-robot/sitemap
+
+## Обновление 2026-10-30 (GEO)
+- FAQPage JSON-LD на faq.html (вопросы видимы на странице).
+- Organization: description, areaServed, knowsAbout; publisher у всех WebPage; twitter:image.
+- Убран второй (скрытый) H1 на главной.
+- llms.txt — краткое фактическое описание сайта для AI-ассистентов (ChatGPT, Perplexity, Claude).
+- robots.txt явно разрешает поисковых и AI-ботов.
+- IndexNow-ключ b7e4c1a96f2d48d0a3e5f17c9b2d6e84.txt — не удалять (Bing/Yandex быстрая индексация).
