@@ -42,3 +42,26 @@
 .usa-page .usa-footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .usa-page .site-lang-picker{position:relative;z-index:4}
 @media(max-width:700px){.usa-page .usa-hero{padding:65px 0}.usa-page .usa-grid{grid-template-columns:1fr}.usa-page .usa-header-inner{padding:15px 17px}.usa-page .usa-actions{flex-direction:column;align-items:stretch}.usa-page .usa-button{width:100%}.globe-country-nav{gap:7px}.globe-country-nav a{font-size:10px}}
+
+
+/* Vacancy card imagery | 2026-10-30 */
+.v2-card .country-image.country-germany,
+.v2-card .country-image.country-lithuania,
+.v2-card .country-image.country-slovakia,
+.v2-card .country-image.country-netherlands{
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+.v2-card .country-image.country-germany{background-image:linear-gradient(0deg,rgba(8,24,51,.35),rgba(8,24,51,.04) 52%),url("./assets/germany.jpg");}
+.v2-card .country-image.country-lithuania{background-image:linear-gradient(0deg,rgba(8,24,51,.35),rgba(8,24,51,.04) 52%),url("./assets/lithuania.webp");}
+.v2-card .country-image.country-slovakia{background-image:linear-gradient(0deg,rgba(8,24,51,.35),rgba(8,24,51,.04) 52%),url("./assets/slovakia.jpg");}
+.v2-card .country-image.country-netherlands{background-image:linear-gradient(0deg,rgba(8,24,51,.35),rgba(8,24,51,.04) 52%),url("./assets/netherlands.jpg");}
+.v2-card .country-image.country-germany::before,
+.v2-card .country-image.country-lithuania::before,
+.v2-card .country-image.country-slovakia::before,
+.v2-card .country-image.country-netherlands::before{content:none;}
+.v2-card .country-image.country-germany .country-letter,
+.v2-card .country-image.country-lithuania .country-letter,
+.v2-card .country-image.country-slovakia .country-letter,
+.v2-card .country-image.country-netherlands .country-letter{opacity:.30;}
