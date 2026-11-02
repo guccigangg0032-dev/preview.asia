@@ -54,3 +54,20 @@ a:focus-visible,button:focus-visible{outline:3px solid #eaa93c;outline-offset:4p
 @media(max-width:900px){.offer-hero .offer-shell{grid-template-columns:1fr;padding:55px 0}.offer-hero-image{max-width:560px;height:240px}.offer-layout{grid-template-columns:1fr}.offer-toc{position:static;max-height:none}.offer-toc a{display:inline-block;margin-right:16px}.offer-navigation{gap:10px}}
 @media(max-width:570px){.offer-shell{width:calc(100% - 30px)}.offer-header .offer-shell{min-height:69px}.offer-brand{font-size:15px}.offer-navigation a:nth-child(2){display:none}.offer-nav-whatsapp{padding:10px 13px}.offer-hero h1{font-size:33px}.offer-hero-image{height:190px}.offer-content-section{padding:24px 20px}.offer-media{padding:23px 20px}.offer-toc{padding:17px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Accessible on-page player for YouTube and Instagram vacancy videos. */
+.offer-media-links a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;transition:background-color .15s,color .15s}
+.offer-media-links a:hover{background:#245dbc;color:#fff;border-color:#245dbc}
+.offer-verify-notice{background:#fff;border:1px solid #dce7f4;border-radius:16px;padding:16px 20px;color:#516781;font-size:13px;line-height:1.7;margin:0 0 20px}
+.offer-video-dialog{width:min(940px,calc(100vw - 24px));max-width:min(940px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid #37516e;border-radius:20px;background:#0a1931;color:#fff;box-shadow:0 28px 90px #0009;overflow:auto}
+.offer-video-dialog::backdrop{background:#071326de;backdrop-filter:blur(5px)}
+.offer-video-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 18px}
+.offer-video-title{font-size:15px;font-weight:800}
+.offer-video-close{appearance:none;border:1px solid #62768d;background:#192f4c;border-radius:10px;padding:10px 14px;color:white;cursor:pointer;font:inherit;font-size:13px;font-weight:700}
+.offer-video-close:hover{background:#264b76}
+.offer-video-stage{display:flex;justify-content:center;align-items:center;min-height:230px;background:#060b15}
+.offer-video-frame{display:block;width:100%;aspect-ratio:16/9;height:auto;max-height:74dvh;border:0;background:#080e19}
+.offer-video-dialog[data-provider="instagram"] .offer-video-frame{width:min(100%,430px);height:min(72dvh,760px);aspect-ratio:9/16}
+.offer-video-bottom{padding:12px 18px 16px;font-size:12px;line-height:1.6;color:#afc3df}
+.offer-video-fallback{color:#a5d0ff;text-decoration:underline}
+@media(max-width:570px){.offer-video-dialog{width:calc(100vw - 12px);max-width:calc(100vw - 12px);max-height:calc(100dvh - 12px);border-radius:14px}.offer-video-top{padding:10px 12px}.offer-video-dialog[data-provider="instagram"] .offer-video-frame{height:min(75dvh,710px);width:min(100%,430px)}}
